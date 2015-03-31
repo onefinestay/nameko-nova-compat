@@ -11,6 +11,7 @@ from nameko_nova_compat.proxy import RPCProxy
 
 
 class NovaService(object):
+    name = "novaservice"
 
     @rpc
     def echo(self, arg):

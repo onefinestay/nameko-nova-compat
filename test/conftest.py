@@ -8,9 +8,10 @@ import sys
 from kombu import Connection
 from kombu import pools
 from nameko.containers import ServiceContainer
+from nameko.testing.rabbit import Client
 from nameko.testing.utils import (
-    get_rabbit_config, get_rabbit_manager, get_rabbit_connections,
-    reset_rabbit_connections, reset_rabbit_vhost)
+    get_rabbit_config, get_rabbit_connections, reset_rabbit_connections,
+    reset_rabbit_vhost)
 import pytest
 
 from nameko_nova_compat.testing import reset_state
@@ -59,7 +60,7 @@ def empty_config(request):
 @pytest.fixture(scope='session')
 def rabbit_manager(request):
     config = request.config
-    return get_rabbit_manager(config.getoption('RABBIT_CTL_URI'))
+    return Client(config.getoption('RABBIT_CTL_URI'))
 
 
 @pytest.yield_fixture()
