@@ -1,0 +1,26 @@
+sudo: false
+language: python
+
+python:
+  - '2.7'
+
+services:
+  - rabbitmq
+
+install:
+  - pip install tox
+
+env:
+  - TOX_ENV=test
+
+script:
+  - tox -e $TOX_ENV
+
+deploy:
+  provider: pypi
+  user: onefinestay
+  password:
+    secure: MgvfBtayIOuXhDrfUqkF3z9V0a3ESbT2PZeUlkCRgmTXT+bkR6SDOPi8gShAYR3L6FeoYO0FUZ0wNBHwZG2j8SMG4+VS89f/opo+3xgRMP5zFX2Ck+MBrcM8JMN/+EfHXQhgYE40ClG89XKqkdXSPC3MB/e0NEi+5DHxQXCCRKg=
+  on:
+    tags: true
+    repo: onefinestay/nameko-nova-compat
