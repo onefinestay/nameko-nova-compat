@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nameko-nova-compat',
-    version='0.0.1',
+    version='0.0.2',
     description='Nova-RPC compatibility for nameko services',
     author='onefinestay',
     author_email='engineering@onefinestay.com',
