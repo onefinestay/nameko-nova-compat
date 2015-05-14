@@ -2,14 +2,14 @@ import eventlet
 from eventlet.event import Event
 from kombu import Producer
 import mock
-import pytest
-
 from nameko.exceptions import RemoteError, UnknownService
-from nameko.kombu_helpers import queue_iterator
 from nameko_nova_compat import context
 from nameko_nova_compat import nova
 from nameko_nova_compat.responses import ifirst
 from nameko.testing.utils import assert_stops_raising
+import pytest
+
+from nameko_nova_compat.kombu_helpers import queue_iterator
 
 
 def test_delegation_to_send_rpc():

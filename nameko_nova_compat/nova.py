@@ -4,13 +4,13 @@ from logging import getLogger
 from kombu import Producer, Exchange, Queue
 from nameko.constants import DEFAULT_RETRY_POLICY
 from nameko.exceptions import UnknownService
-from nameko.kombu_helpers import queue_iterator
 
 from nameko_nova_compat import responses
 from nameko_nova_compat.context import Context
 from nameko_nova_compat.channelhandler import ChannelHandler
 from nameko_nova_compat.common import UIDGEN
 from nameko_nova_compat.decorators import ensure
+from nameko_nova_compat.kombu_helpers import queue_iterator
 
 
 _log = getLogger(__name__)
